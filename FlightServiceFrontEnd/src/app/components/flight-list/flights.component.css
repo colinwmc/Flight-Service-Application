@@ -1,0 +1,65 @@
+table, th, td {
+    border: 1px solid;
+    
+  }
+
+  table {
+    width: 90%;
+    margin-left: 5%;
+    
+  }
+  th{
+    background-color: indigo;
+    color: aliceblue;
+  }
+
+  td{
+    background-color: aliceblue;
+    color: indigo;
+  }
+  .idButton{
+    color: aliceblue;
+    background-color: indigo;
+    border: 1px solid;
+  }
+  #edit{
+    background-color: rgb(255, 227, 68);
+    width: 60px;
+    
+  }
+  #delete{
+    background-color: rgba(255, 17, 17, 0.829);
+    width: 60px;
+  }
+
+  .centerColumns{
+    text-align: center;
+  }
+  #add{
+    margin-left: 5%;
+    margin-bottom: 5px;
+    width: 200px;
+    background-color:rgb(124, 223, 92);
+    font-size: large;
+  }
+  h1{
+    margin-left: 5%;
+    color: indigo;
+  }
+  input{
+    width: 94%;
+  }
+  .actions{
+    display: flex;
+    justify-content: center;
+  }
+  #search{
+    width: 60px;
+    background-color: indigo;
+    color: aliceblue;
+  }
+  #reset{
+    width: 60px;
+    background-color: white;
+    color: indigo;
+  }

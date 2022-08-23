@@ -1,0 +1,37 @@
+<div *ngIf="passenger">
+    
+    <h2>Passenger Information</h2>
+    <div id="infoBox">
+     <div class="info">Passenger ID: {{passenger.id}}</div>
+     <div class="info">First and Middle Name: {{passenger.firstMidName}}</div>
+     <div class="info">Last Name: {{passenger.lastName}}</div>
+     <div class="info">Date of Birth: {{passenger.dob| date:'shortDate'}}</div>
+     <div class="info">Profession: {{passenger.job}}</div>
+     <div class="info">Email: {{passenger.email}}</div>
+    </div>
+     <a routerLink="/edit/passenger/{{passenger.id}}"><button id="edit">Edit Passenger Info</button></a>
+     <button (click)="deletePassenger()" id="delete">Delete Passenger</button>
+   </div>
+   <h2>Reservations Made</h2>
+  <div *ngIf="flights">
+    <table >
+      <thead>
+        <th>Reservation ID</th>
+        <th>Flight Number</th>
+        <th>Departure Airport</th>
+        <th>Departure Date/Time</th>
+        <th>Arrival Airport</th>
+        <th>Arrival Date/Time</th>
+      </thead>
+      <tbody *ngFor="let flight of flights">
+        <tr id="center">
+          <td><a routerLink="/reservations/{{flight.reservationID}}"><button id="idButton">{{flight.reservationID}}</button></a></td>
+          <td>{{flight.flightNumber}}</td>
+          <td>{{flight.departureAirport}}</td>
+          <td>{{flight.departureDateTime| date:'short'}}</td>
+          <td>{{flight.arrivalAirport}}</td>
+          <td>{{flight.arrivalDateTime| date:'short'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,41 @@
+<h1>All Reservations</h1>
+<a routerLink='/add/reservation'><button id="add">+ Add A New Reservation</button></a>
+  <table >
+    <thead>
+      <th>Reservation ID</th>
+      <th>Passenger First Name</th>
+      <th>Passenger Last Name</th>
+      <th>Flight Number</th>
+      <th>Departure Airport</th>
+      <th>Departure Date/Time</th>
+      <th>Arrival Airport</th>
+      <th>Arrival Date/Time</th>
+      <th></th>
+    </thead>
+    <tbody >
+      <tr class="centerColumns">
+        <td><input type="text" [(ngModel)]="filter.id"></td>
+        <td><input type="text" [(ngModel)]="filter.firstMidName"></td>
+        <td><input type="text" [(ngModel)]="filter.lastName"></td>
+        <td><input type="text" [(ngModel)]="filter.flightNumber"></td>
+        <td><input type="text" [(ngModel)]="filter.departureAirport"></td>
+        <td><input type="date" [(ngModel)]="filter.departureDateTime"></td>
+        <td><input type="text" [(ngModel)]="filter.arrivalAirport"></td>
+        <td><input type="date" [(ngModel)]="filter.arrivalDateTime"></td>
+        <td><div id="actions"><button id="search" (click)="filterReservations();">Search</button><button id="reset" (click)="resetReservations();">Reset</button></div></td>
+      </tr>
+      <tr  *ngFor="let reservation of filteredReservations">
+        <td class="centerColumns"><button id="idButton" routerLink="/reservations/{{reservation.id}}">{{reservation.id}}</button></td>
+        <td>{{reservation.firstMidName}}</td>
+        <td>{{reservation.lastName}}</td>
+        <td>{{reservation.flightNumber}}</td>
+        <td>{{reservation.departureAirport}}</td>
+        <td>{{reservation.departureDateTime| date:'short'}}</td>
+        <td>{{reservation.arrivalAirport}}</td>
+        <td>{{reservation.arrivalDateTime| date:'short'}}</td>
+        <td class="centerColumns"><button id="cancel" (click)="deleteReservation(reservation.id)">Cancel</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  
